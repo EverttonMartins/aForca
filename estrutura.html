@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: rgb(192, 192, 218);
+            /* border-color: rgb(238, 19, 19);
+            border: 2px; */
+            /* background-color: lightgreen; */
+            border: solid 1px black;
+            height: 97vh;
+            width: 213vh;
+        }
+        .container2 {
+            display: grid;
+            grid-template-rows: 75% 25%;
+        }
+        .container3 {
+            /* background-color: blueviolet; */
+            display: grid;
+            grid-template-columns: repeat(3, 33.33%);
+
+        }
+
+        .container-interacao{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            /* background-color: lightgreen; */
+            border: solid 1px black;
+        }
+        
+        .descubra {
+            font-size: 100px;
+            
+            /* background-color: rgb(104, 14, 248); */
+        }
+        
+        .letras{
+            font-size: 40px;
+            
+            /* background-color: rgba(255, 0, 179, 0.637); */
+        }
+        
+        .forca {
+            font-size: 40px;
+            
+            /* background-color: rgb(228, 65, 65); */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container container2">
+        <div class="container3">
+            <div class="container-interacao">
+                <div id="container-palavra">
+                    <div>
+                        <label>Palavra:</label>
+                        <input type="text" id="palavra" name="palavra">
+                    </div>
+                    <div class="button">
+                        <button name="button" id="okPalavra">Ok</button>
+                    </div>
+                </div>
+
+                <div id="container-letra">
+                    <div>
+                        <label>Letra:</label>
+                        <input type="text" id="letra" name="letra">
+                    </div>
+                    <div class="button"> 
+                        <button name="button" id="okLetra">Ok</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-interacao forca" id="forca"></div>
+            <div class="container-interacao letras" id="letrasDidas"></div>
+        </div>
+        <div class="container-interacao descubra">
+            <div id="frase">
+
+            </div>
+            
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
