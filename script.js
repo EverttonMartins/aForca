@@ -49,7 +49,7 @@ function pesquisarLetra() {
 
 
     let test2 = false
-
+ Externo:
     if (letra != '') {
         for (let i = 0; i < palavra.length; i++) {
 
@@ -58,9 +58,17 @@ function pesquisarLetra() {
             }
         }
         if (test2 === false) {
+            for (let i = 0; i < letrasDitas.length; i++) {
+    
+                if(letrasDitas[i] === letra){
+                    letra = ''
+                    break Externo 
+                }
+            }
             letrasDitas.push(letra)   
         }
     }
+   
 
     document.getElementById('letrasDidas').innerHTML = letrasDitas
     document.getElementById("letra").value = ""
