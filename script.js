@@ -20,6 +20,7 @@ function gravarPalavra() {
     }
     
     document.getElementById('palavra').value = ''
+
 }
 
 
@@ -41,6 +42,10 @@ function pesquisarLetra() {
             letra=''
         }
         
+    }
+
+    if(palavra[palavra.length-1] == letra){
+        letra=''
     }
     
     if (letra === palavra) {
@@ -73,4 +78,6 @@ function pesquisarLetra() {
     document.getElementById('letrasDidas').innerHTML = letrasDitas
     document.getElementById("letra").value = ""
     document.getElementById('forca').innerHTML = letrasDitas.length
+    document.getElementById('forca').style.backgroundImage =  `url('img/forca${letrasDitas.length}.png')`
+
 }
