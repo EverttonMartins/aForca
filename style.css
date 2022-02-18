@@ -22,7 +22,7 @@
     justify-content: center;
     align-items: center;
 
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 
 .descubra {
@@ -37,5 +37,5 @@
     font-size: 40px;
     background-image: url("img/forca0.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 98%;
 }

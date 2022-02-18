@@ -6,9 +6,7 @@ let tamanhoFrase = []
 function gravarPalavra() {
     palavra = document.getElementById("palavra").value
     
-    let ar = palavra.split('')
-    console.log(ar)
-    for(let x =0; x<ar.length ; x++){
+    for(let x =0; x<palavra.length ; x++){
         tamanhoFrase.push('_')
     }
     
@@ -26,7 +24,6 @@ function gravarPalavra() {
 
 document.getElementById('okLetra').addEventListener("click",pesquisarLetra)
 let letrasDitas = []
-let contador = 0
 let letra = ''
 
 function pesquisarLetra() {
@@ -50,6 +47,7 @@ function pesquisarLetra() {
     
     if (letra === palavra) {
         document.getElementById("frase").innerHTML = palavra
+        
     }
 
 
@@ -70,14 +68,32 @@ function pesquisarLetra() {
                     break Externo 
                 }
             }
-            letrasDitas.push(letra)   
+            if (letra !== palavra) {                
+                
+            letrasDitas.push(letra) }  
         }
     }
-   
 
+
+   
     document.getElementById('letrasDidas').innerHTML = letrasDitas
     document.getElementById("letra").value = ""
-    document.getElementById('forca').innerHTML = letrasDitas.length
+    // document.getElementById('forca').innerHTML = letrasDitas.length
     document.getElementById('forca').style.backgroundImage =  `url('img/forca${letrasDitas.length}.png')`
 
 }
+
+function enterPress (event) {
+    if(event.keyCode == 13){
+        pesquisarLetra()
+    }
+}
+
+function enterPress2 (event) {
+    if(event.keyCode == 13){
+        gravarPalavra()
+    }
+}
+
+document.getElementById('letra').addEventListener('keydown', enterPress)
+document.getElementById('palavra').addEventListener('keydown', enterPress2)
