@@ -10,7 +10,7 @@ function gravarPalavra() {
         tamanhoFrase.push('_')
     }
     
-    document.getElementById("frase").innerHTML = tamanhoFrase
+    document.getElementById("frase").innerHTML = tamanhoFrase.join(' ')
     
     
     if (document.getElementById('palavra').value != '' ) {
@@ -34,7 +34,7 @@ function pesquisarLetra() {
         if(palavra[i] === letra){
             test1 = true
             tamanhoFrase[i] = letra
-            document.getElementById("frase").innerHTML = tamanhoFrase
+            document.getElementById("frase").innerHTML = tamanhoFrase.join(' ')
         }else if(((palavra.length-1) === i) && test1 === true){
             letra=''
         }
