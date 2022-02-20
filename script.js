@@ -4,7 +4,7 @@ let palavra = ''
 let tamanhoFrase = []
 
 function gravarPalavra() {
-    palavra = document.getElementById("palavra").value
+    palavra = document.getElementById("palavra").value.toUpperCase()
     
     for(let x =0; x<palavra.length ; x++){
         tamanhoFrase.push('_')
@@ -27,60 +27,65 @@ let letrasDitas = []
 let letra = ''
 
 function pesquisarLetra() {
-    letra = document.getElementById("letra").value
-    let test1 = false
-
-    for (let i = 0; i < palavra.length; i++) {
-        if(palavra[i] === letra){
-            test1 = true
-            tamanhoFrase[i] = letra
-            document.getElementById("frase").innerHTML = tamanhoFrase.join(' ')
-        }else if(((palavra.length-1) === i) && test1 === true){
-            letra=''
-        }
-        
-    }
-
-    if(palavra[palavra.length-1] == letra){
-        letra=''
-    }
+    letra = document.getElementById("letra").value.toUpperCase()
     
     if (letra === palavra) {
+        document.getElementById("letra").value=''
         document.getElementById("frase").innerHTML = palavra
         
-    }
-
-
-    let test2 = false
- Externo:
-    if (letra != '') {
-        for (let i = 0; i < palavra.length; i++) {
-
-            if(palavra[i] === letra){
-                return test2 = true
-            }
-        }
-        if (test2 === false) {
-            for (let i = 0; i < letrasDitas.length; i++) {
+    } else if(letra.length > 1){
+        document.getElementById("letra").value = ''
+        alert('digite uma so letra ou a palavra certa')
+    }else {
     
-                if(letrasDitas[i] === letra){
-                    letra = ''
-                    break Externo 
+            let test1 = false
+
+            for (let i = 0; i < palavra.length; i++) {
+                if(palavra[i] === letra){
+                    test1 = true
+                    tamanhoFrase[i] = letra
+                    document.getElementById("frase").innerHTML = tamanhoFrase.join(' ')
+                }else if(((palavra.length-1) === i) && test1 === true){
+                    letra=''
+                }
+                
+            }
+
+            if(palavra[palavra.length-1] == letra){
+                letra=''
+            }
+            
+
+
+            let test2 = false
+            Externo:
+            if (letra != '') {
+                for (let i = 0; i < palavra.length; i++) {
+
+                    if(palavra[i] === letra){
+                        return test2 = true
+                    }
+                }
+                if (test2 === false) {
+                    for (let i = 0; i < letrasDitas.length; i++) {
+            
+                        if(letrasDitas[i] === letra){
+                            letra = ''
+                            break Externo 
+                        }
+                    }
+                    if (letra !== palavra) {                
+                        
+                    letrasDitas.push(letra) }  
                 }
             }
-            if (letra !== palavra) {                
-                
-            letrasDitas.push(letra) }  
-        }
-    }
 
 
-   
-    document.getElementById('letrasDidas').innerHTML = letrasDitas
-    document.getElementById("letra").value = ""
-    // document.getElementById('forca').innerHTML = letrasDitas.length
-    document.getElementById('forca').style.backgroundImage =  `url('img/forca${letrasDitas.length}.png')`
+            document.getElementById('letrasDidas').innerHTML = letrasDitas
+            document.getElementById("letra").value = ""
+            document.getElementById('forca').style.backgroundImage =  `url('img/forca${letrasDitas.length}.png')`
 
+            }
 }
 
 function enterPress (event) {
