@@ -108,9 +108,4 @@ function enterPress2(event) {
 document.getElementById('letra').addEventListener('keydown', enterPress)
 document.getElementById('palavra').addEventListener('keydown', enterPress2)
 
-// function toClick (){
-//     let valor = document.getElementsByTagName('form').value
-//     console.log(valor)
-// }
 
-// document.getElementsByTagName('form').addEventListener('click', toClick)
