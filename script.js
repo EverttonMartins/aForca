@@ -45,6 +45,10 @@ function pesquisarLetra() {
                 test1 = true
                 tamanhoFrase[i] = letra
                 document.getElementById("frase").innerHTML = tamanhoFrase.join(' ')
+                
+                document.getElementById(`button-${letra}`).classList += ' press'
+                document.getElementById(`button-${letra}`).style.background = 'rgb(76, 243, 84)'
+
             } else if (((palavra.length - 1) === i) && test1 === true) {
                 letra = ''
             }
@@ -73,13 +77,16 @@ function pesquisarLetra() {
                 }
                 if (letra !== palavra) {
 
+                    document.getElementById(`button-${letra}`).classList += ' press'
+                    document.getElementById(`button-${letra}`).style.background = 'rgb(255, 119, 119)'
+
                     letrasDitas.push(letra)
                 }
             }
         }
 
 
-        document.getElementById('letrasDidas').innerHTML = letrasDitas
+        // document.getElementById('letrasDidas').innerHTML = letrasDitas
         document.getElementById("letra").value = ""
         document.getElementById('forca').style.backgroundImage = `url('img/forca${letrasDitas.length}.png')`
 
