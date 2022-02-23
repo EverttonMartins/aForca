@@ -1,9 +1,10 @@
 * {
+    margin: 0;
     box-sizing: border-box;
 }
 .container {
-    height: 97vh;
-    width: 213vh;
+    height: 100vh;
+    width: 100%;
 }
 .container2 {
     display: grid;
@@ -11,7 +12,10 @@
 }
 .container3 {
     display: grid;
+    grid-template-rows: 5% 95%;
     grid-template-columns: repeat(3, 33.33%);
+
+    grid-row-start: span span;
 
 }
 
@@ -20,11 +24,22 @@
     justify-content: center;
     align-items: center;
 
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 
 .descubra {
     font-size: 100px;
+}
+
+#frase {
+    
+    border: solid 3px blueviolet
+}
+#barra{
+    background-color: blue;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .letras{
