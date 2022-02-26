@@ -1,6 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    /* font-family:  'Times New Roman', Times, serif; */
 }
 .container {
     height: 100vh;
@@ -12,10 +13,8 @@
 }
 .container3 {
     display: grid;
-    grid-template-rows: 5% 95%;
+    grid-template-rows: 7% 93%;
     grid-template-columns: repeat(3, 33.33%);
-
-    grid-row-start: span span;
 
 }
 
@@ -23,20 +22,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* border: solid 1px black; */
 }
 
 .descubra {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 100px;
 }
 
 #frase {
     
-    border: solid 3px blueviolet
+    border-bottom;: solid 3px blueviolet
 }
 #barra{
-    background-color: blue;
+    background-color: rgb(255, 208, 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
     grid-column-start: 1;
     grid-column-end: 4;
