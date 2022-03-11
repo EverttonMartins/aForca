@@ -32,6 +32,11 @@ function pesquisarLetra() {
     if (letra === palavra) {
         document.getElementById("letra").value = ''
         document.getElementById("frase").innerHTML = palavra
+        
+        setInterval(() => {
+            alert('Voce ganhou o jogo, jogue novamente!!')
+                window.location = window.location.href;
+        }, 3000);
 
     } else if (letra.length > 1) {
         document.getElementById("letra").value = ''
@@ -87,11 +92,24 @@ function pesquisarLetra() {
 
 
         // document.getElementById('letrasDidas').innerHTML = letrasDitas
+
         document.getElementById("letra").value = ""
         document.getElementById('forca').style.backgroundImage = `url('img/forca${letrasDitas.length}.png')`
-
+        
+            if(letrasDitas.length == 9){
+                setInterval(function() {
+                    alert('Voce perdeu, jogue novamente!!')
+                    window.location = window.location.href;
+                }, 3000);
+            }
+            if(tamanhoFrase.join('') == palavra){
+                setInterval(() => {
+                    alert('Voce ganhou o jogo, jogue novamente!!')
+                        window.location = window.location.href;
+                }, 3000);
+            }
+        }
     }
-}
 
 function enterPress(event) {
     if (event.keyCode == 13) {
